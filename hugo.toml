@@ -31,6 +31,9 @@ buildDrafts = false
 
   # без profileMode / homeInfoParams -> главная сразу показывает посты
 
+  [params.label]
+    link = "https://b0tn3t.sh/"
+
   [params.fuseOpts]
     isCaseSensitive = false
     shouldSort = true
