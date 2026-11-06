@@ -69,6 +69,14 @@
     background:var(--accent);margin-left:.15ch;box-shadow:0 0 8px var(--accent-soft);
     animation:tblink 1.1s steps(1) infinite;}
   @keyframes tblink{50%{opacity:0;}}
+  /* home language chooser */
+  .post-content .lang-pick{margin:1rem 0 0;display:flex;gap:.5rem;align-items:center;
+    flex-wrap:wrap;font-size:14px;}
+  .post-content .lang-pick .lp-label{color:var(--secondary);}
+  .post-content .lang-pick a{color:var(--content);border:1px solid var(--border);
+    border-radius:6px;padding:.14em .7em;text-decoration:none;transition:border-color .2s,color .2s;}
+  .post-content .lang-pick a::before{content:"";}
+  .post-content .lang-pick a:hover{border-color:var(--accent);color:var(--accent);}
 
   /* header logo: "blog" -> blog home (subtle dotted underline), "b0tn3t.sh" -> main site.
      PaperMod sets ".logo a{display:flex}", which stacks our parts vertically — keep them inline on one line. */

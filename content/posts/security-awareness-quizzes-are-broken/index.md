@@ -11,10 +11,11 @@ TocOpen: false
 alternates:
   - { lang: "ru", url: "/posts/security-awareness-quizzes-are-broken/" }
   - { lang: "en", url: "/posts/security-awareness-quizzes-are-broken-en/" }
+  - { lang: "zh", url: "/posts/security-awareness-quizzes-are-broken-zh/" }
   - { lang: "x-default", url: "/posts/security-awareness-quizzes-are-broken-en/" }
 ---
 
-**🇬🇧 [Read this in English]({{< ref "/posts/security-awareness-quizzes-are-broken-en/" >}})**
+**🇷🇺 Русский** · [🇬🇧 English]({{< ref "/posts/security-awareness-quizzes-are-broken-en/" >}}) · [🇨🇳 中文]({{< ref "/posts/security-awareness-quizzes-are-broken-zh/" >}})
 
 Скажу сразу, без долгих вступлений: **корпоративный опросник по кибербезопасности с вариантами ответов не измеряет вашу защищённость. Он измеряет умение проходить опросники.** Это два разных навыка, и между ними нет связи.
 

@@ -14,10 +14,11 @@ build:
 alternates:
   - { lang: "ru", url: "/posts/security-awareness-quizzes-are-broken/" }
   - { lang: "en", url: "/posts/security-awareness-quizzes-are-broken-en/" }
+  - { lang: "zh", url: "/posts/security-awareness-quizzes-are-broken-zh/" }
   - { lang: "x-default", url: "/posts/security-awareness-quizzes-are-broken-en/" }
 ---
 
-**🇷🇺 [Читать по-русски]({{< ref "/posts/security-awareness-quizzes-are-broken/" >}})**
+[🇷🇺 Русский]({{< ref "/posts/security-awareness-quizzes-are-broken/" >}}) · **🇬🇧 English** · [🇨🇳 中文]({{< ref "/posts/security-awareness-quizzes-are-broken-zh/" >}})
 
 I'll say it straight, no long intro: **a corporate multiple-choice security quiz doesn't measure how protected you are. It measures your ability to pass quizzes.** Those are two different skills, and there's no link between them.
 
