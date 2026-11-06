@@ -20,7 +20,7 @@ A multiple-choice security quiz is built so that **the right answer is obvious f
 
 A classic:
 
-> **Your "boss" DMs you: urgently send the private keys to the prod server, it's on fire.** What do you do?
+> **Your "boss" DMs you: our service is down, we need to fix it ASAP, send me the server credentials.** What do you do?
 >
 > - **A.** Send them right away, the boss is asking
 > - **B.** Ask again in the same chat and send
