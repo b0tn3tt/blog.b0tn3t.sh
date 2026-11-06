@@ -24,12 +24,12 @@ A classic:
 >
 > - **A.** Send them right away, the boss is asking
 > - **B.** Ask again in the same chat and send
-> - **C.** Call a known number, confirm it's really them, and only then decide
+> - **C.** Don't send secrets over chat at all: credentials only go through the corporate password manager
 > - **D.** Ignore it
 
 Any reasonable person picks **C**. Not because that's what they'd actually do, but because next to the other options, C simply looks like the most sensible and correct one. This isn't a security question. It's a reading question.
 
-Now an honest question for you: **are you really sure that at 2:50pm on a Friday, when the "boss" is frantically typing in all caps about a burning prod server, your employee will actually go look up a number and call?** Sitting at a test, calm, they'll of course pick the "right" option. But in a real attack, under pressure and in the chaos, most people won't. They'll give in to the panic and send it anyway. So the test showed one thing, and in reality the person behaves completely differently. That's why the metric is worthless: it measures behavior in greenhouse conditions, not in combat.
+Now an honest question for you: **are you really sure that at 2:50pm on a Friday, when the "boss" is frantically typing in all caps about a downed prod server, your employee will actually refuse and point them to the password manager instead of just pasting the password?** Sitting at a test, calm, they'll of course pick the "right" option. But in a real attack, under pressure and in the chaos, most people won't. They'll give in to the panic and send it anyway. So the test showed one thing, and in reality the person behaves completely differently. That's why the metric is worthless: it measures behavior in greenhouse conditions, not in combat.
 
 ### Why this happens, and it's not stupidity
 
