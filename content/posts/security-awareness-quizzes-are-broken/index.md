@@ -8,7 +8,13 @@ summary: "Тесты с вариантами ответов проверяют �
 images: ["og-awareness.png"]
 ShowToc: true
 TocOpen: false
+alternates:
+  - { lang: "ru", url: "/posts/security-awareness-quizzes-are-broken/" }
+  - { lang: "en", url: "/posts/security-awareness-quizzes-are-broken-en/" }
+  - { lang: "x-default", url: "/posts/security-awareness-quizzes-are-broken-en/" }
 ---
+
+**🇬🇧 [Read this in English]({{< ref "/posts/security-awareness-quizzes-are-broken-en/" >}})**
 
 Скажу сразу, без долгих вступлений: **корпоративный опросник по кибербезопасности с вариантами ответов не измеряет вашу защищённость. Он измеряет умение проходить опросники.** Это два разных навыка, и между ними нет связи.
 
