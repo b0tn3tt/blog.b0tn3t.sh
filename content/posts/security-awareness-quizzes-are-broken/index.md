@@ -5,6 +5,7 @@ draft: false
 categories: ["security-awareness", "red-team"]
 tags: ["awareness", "social-engineering", "red-team", "phishing", "human-factor", "opinion"]
 summary: "Тесты с вариантами ответов проверяют не защищённость, а умение угадывать «правильный» вариант. А увольнять тех, кто не сдал — значит наказывать за честность и лишать себя правдивых данных. Разбираю, почему это так, и чем это заменить."
+images: ["og-awareness.png"]
 ShowToc: true
 TocOpen: false
 ---

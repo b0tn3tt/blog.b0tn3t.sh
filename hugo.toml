@@ -18,6 +18,7 @@ buildDrafts = false
 
 [params]
   env = "production"
+  images = ["og.png"]
   defaultTheme = "dark"
   disableThemeToggle = true
   mainSections = ["posts"]
