@@ -1,6 +1,6 @@
 ---
-title: "Search"
+title: "搜索"
 layout: "search"
-summary: "search"
-placeholder: "search posts..."
+summary: "搜索"
+placeholder: "搜索文章…"
 ---

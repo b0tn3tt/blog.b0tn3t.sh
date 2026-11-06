@@ -1,20 +1,20 @@
-{{- /* Project override of PaperMod's post_meta: force English reading-time/word
-       labels on every language (Hugo's project i18n override is unreliable for
-       secondary languages, so we don't go through i18n for these). */ -}}
+{{- /* Project override of PaperMod's post_meta. Date + reading time are shown in the
+       page's own language: Chinese on the zh-cn version, English on RU/EN (RU keeps an
+       English UI by request). Go-native .Date.Format is used so the month/format is a
+       literal we control, not Hugo's locale-based time.Format. */ -}}
 {{- $meta := slice }}
+{{- $datefmt := cond (eq .Lang "zh-cn") "2006年1月2日" "January 2, 2006" }}
 
-{{- /* .Date.Format is Go-native (always English month names); Hugo's time.Format
-       would localize per language, so we avoid it to keep dates English everywhere. */ -}}
 {{- if not .Date.IsZero -}}
-    {{- $meta = $meta | append (printf "<span title='%s'>%s</span>" (.Date.Format "2006-01-02T15:04:05-07:00") (.Date.Format "January 2, 2006")) }}
+    {{- $meta = $meta | append (printf "<span title='%s'>%s</span>" (.Date.Format "2006-01-02T15:04:05-07:00") (.Date.Format $datefmt)) }}
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") -}}
-    {{- $meta = $meta | append (printf "<span>%d min</span>" .ReadingTime) }}
+    {{- $meta = $meta | append (printf "<span>%s</span>" (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime))) }}
 {{- end }}
 
 {{- if (.Param "ShowWordCount") -}}
-    {{- $meta = $meta | append (printf "<span>%d words</span>" .WordCount) }}
+    {{- $meta = $meta | append (printf "<span>%s</span>" (i18n "words" .WordCount | default (printf "%d words" .WordCount))) }}
 {{- end }}
 
 {{- if not (.Param "hideAuthor") -}}
