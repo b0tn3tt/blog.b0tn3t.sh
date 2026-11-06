@@ -88,4 +88,39 @@
      single post page is left untouched. */
   .first-entry .entry-cover img,.post-entry .entry-cover img{
     height:180px;width:100%;object-fit:cover;object-position:top center;}
+
+  /* in-post terminal headings + more red presence */
+  .post-content h1::before,.post-content h2::before,
+  .post-content h3::before,.post-content h4::before{
+    content:"> ";color:var(--accent);font-weight:700;text-shadow:0 0 10px var(--accent-soft);}
+  .post-content h2{border-left:3px solid var(--accent);padding-left:.55rem;}
+  .post-content h3{border-left:2px solid var(--accent-soft);padding-left:.5rem;}
+  .post-content blockquote{border-inline-start:3px solid var(--accent);
+    background:var(--code-bg);box-shadow:inset 0 0 0 1px var(--border);}
+  .toc summary{color:var(--accent);}
+  .toc summary .title{color:var(--content);}
+  /* TOC items: normal text, red terminal ">" markers */
+  .toc .inner a{color:var(--content);}
+  .toc .inner a:hover{color:var(--accent);}
+  .toc .inner ul{list-style:none;padding-inline-start:1.3em;margin:0;}
+  .toc .inner li{position:relative;}
+  .toc .inner li::before{content:">";color:var(--accent);font-weight:700;
+    position:absolute;left:-1.15em;}
+  .title-accent{text-decoration:underline;text-decoration-color:var(--accent);
+    text-decoration-thickness:3px;text-underline-offset:6px;}
+
+  /* decorative animated "code rain" down the page margins (desktop only) */
+  .code-rain{position:fixed;top:0;bottom:0;width:210px;overflow:hidden;z-index:0;
+    pointer-events:none;opacity:.26;color:var(--accent);font:14px/1.6 var(--mono);
+    white-space:pre;user-select:none;
+    -webkit-mask-image:linear-gradient(to bottom,transparent,#000 14%,#000 86%,transparent);
+            mask-image:linear-gradient(to bottom,transparent,#000 14%,#000 86%,transparent);}
+  .code-rain.left{left:0;}
+  .code-rain.right{right:0;text-align:right;}
+  .code-rain .stream{position:absolute;top:0;left:0;right:0;padding:0 14px;
+    animation:coderain 34s linear infinite;}
+  .code-rain.right .stream{animation-duration:42s;}
+  @keyframes coderain{from{transform:translateY(0);}to{transform:translateY(-50%);}}
+  @media (max-width:1300px){.code-rain{display:none;}}
+  @media (prefers-reduced-motion:reduce){.code-rain .stream{animation:none;}}
 </style>
