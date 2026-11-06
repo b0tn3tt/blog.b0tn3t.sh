@@ -2,5 +2,5 @@
 title: "Search"
 layout: "search"
 summary: "search"
-placeholder: "поиск по постам..."
+placeholder: "search posts..."
 ---

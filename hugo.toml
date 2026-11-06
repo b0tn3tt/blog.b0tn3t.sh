@@ -1,5 +1,5 @@
 baseURL = "https://blog.b0tn3t.sh/"
-languageCode = "ru-ru"
+languageCode = "en-us"
 title = "b0tn3t.sh"
 theme = "PaperMod"
 enableRobotsTXT = true
@@ -58,3 +58,6 @@ buildDrafts = false
 [markup.highlight]
   noClasses = false
   style = "monokai"
+
+[markup.goldmark.renderer]
+  unsafe = true

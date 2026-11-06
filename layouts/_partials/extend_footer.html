@@ -1,0 +1,11 @@
+{{- /* Let the Search page load as a full navigation: PaperMod's Fuse.js search
+       relies on inline scripts that Turbo Drive would not re-run. Disables Turbo
+       on the last menu link (Search), mirroring zxc.sx's extend_footer tweak. */ -}}
+<script>
+  (function () {
+    var menu = document.getElementById("menu");
+    if (menu && menu.lastElementChild && menu.lastElementChild.firstElementChild) {
+      menu.lastElementChild.firstElementChild.setAttribute("data-turbo", "false");
+    }
+  })();
+</script>
