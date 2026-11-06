@@ -1,0 +1,30 @@
+{{- /* Project override of PaperMod's post_meta: force English reading-time/word
+       labels on every language (Hugo's project i18n override is unreliable for
+       secondary languages, so we don't go through i18n for these). */ -}}
+{{- $meta := slice }}
+
+{{- /* .Date.Format is Go-native (always English month names); Hugo's time.Format
+       would localize per language, so we avoid it to keep dates English everywhere. */ -}}
+{{- if not .Date.IsZero -}}
+    {{- $meta = $meta | append (printf "<span title='%s'>%s</span>" (.Date.Format "2006-01-02T15:04:05-07:00") (.Date.Format "January 2, 2006")) }}
+{{- end }}
+
+{{- if (.Param "ShowReadingTime") -}}
+    {{- $meta = $meta | append (printf "<span>%d min</span>" .ReadingTime) }}
+{{- end }}
+
+{{- if (.Param "ShowWordCount") -}}
+    {{- $meta = $meta | append (printf "<span>%d words</span>" .WordCount) }}
+{{- end }}
+
+{{- if not (.Param "hideAuthor") -}}
+    {{- with (partial "author.html" .) }}
+        {{- $meta = $meta | append (printf "<span>%s</span>" .) }}
+    {{- end }}
+{{- end }}
+
+{{/* Combine all meta information into a single string with separators and render it as HTML.*/}}
+
+{{- with $meta }}
+    {{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
+{{- end -}}

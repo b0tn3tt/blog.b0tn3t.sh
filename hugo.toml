@@ -1,9 +1,13 @@
 baseURL = "https://blog.b0tn3t.sh/"
-languageCode = "en-us"
 title = "b0tn3t.sh"
 theme = "PaperMod"
 enableRobotsTXT = true
 buildDrafts = false
+
+# Multilingual: one site per language (UI kept English via i18n/ overrides).
+# Russian stays at root (/), English at /en/, Chinese at /zh/.
+defaultContentLanguage = "ru"
+defaultContentLanguageInSubdir = false
 
 [pagination]
   pagerSize = 10
@@ -21,6 +25,7 @@ buildDrafts = false
   images = ["og.png"]
   defaultTheme = "dark"
   disableThemeToggle = true
+  disableLangToggle = true       # language is switched from the home buttons, not the header
   mainSections = ["posts"]
   ShowReadingTime = true
   ShowPostNavLinks = true
@@ -44,17 +49,49 @@ buildDrafts = false
     minMatchCharLength = 0
     keys = ["title", "permalink", "summary", "content"]
 
-[menu]
-  [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    url = "/categories/"
-    weight = 10
-  [[menu.main]]
-    identifier = "search"
-    name = "Search"
-    url = "/search/"
-    weight = 20
+[languages]
+  [languages.ru]
+    languageName = "RU"
+    weight = 1
+    [languages.ru.menu]
+      [[languages.ru.menu.main]]
+        identifier = "categories"
+        name = "Categories"
+        url = "/categories/"
+        weight = 10
+      [[languages.ru.menu.main]]
+        identifier = "search"
+        name = "Search"
+        url = "/search/"
+        weight = 20
+  [languages.en]
+    languageName = "EN"
+    weight = 2
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "categories"
+        name = "Categories"
+        url = "/categories/"
+        weight = 10
+      [[languages.en.menu.main]]
+        identifier = "search"
+        name = "Search"
+        url = "/search/"
+        weight = 20
+  [languages.'zh-cn']
+    languageName = "中文"
+    weight = 3
+    [languages.'zh-cn'.menu]
+      [[languages.'zh-cn'.menu.main]]
+        identifier = "categories"
+        name = "Categories"
+        url = "/categories/"
+        weight = 10
+      [[languages.'zh-cn'.menu.main]]
+        identifier = "search"
+        name = "Search"
+        url = "/search/"
+        weight = 20
 
 [markup.highlight]
   noClasses = false

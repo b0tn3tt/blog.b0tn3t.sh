@@ -8,17 +8,7 @@ summary: "Multiple-choice security tests don't measure how protected you are —
 images: ["og-awareness-en.png"]
 ShowToc: true
 TocOpen: false
-build:
-  list: never
-  render: always
-alternates:
-  - { lang: "ru", url: "/posts/security-awareness-quizzes-are-broken/" }
-  - { lang: "en", url: "/posts/security-awareness-quizzes-are-broken-en/" }
-  - { lang: "zh", url: "/posts/security-awareness-quizzes-are-broken-zh/" }
-  - { lang: "x-default", url: "/posts/security-awareness-quizzes-are-broken-en/" }
 ---
-
-[🇷🇺 Русский]({{< ref "/posts/security-awareness-quizzes-are-broken/" >}}) · **🇬🇧 English** · [🇨🇳 中文]({{< ref "/posts/security-awareness-quizzes-are-broken-zh/" >}})
 
 I'll say it straight, no long intro: **a corporate multiple-choice security quiz doesn't measure how protected you are. It measures your ability to pass quizzes.** Those are two different skills, and there's no link between them.
 

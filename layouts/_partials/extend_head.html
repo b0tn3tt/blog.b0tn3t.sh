@@ -75,8 +75,9 @@
   .post-content .lang-pick .lp-label{color:var(--secondary);}
   .post-content .lang-pick a{color:var(--content);border:1px solid var(--border);
     border-radius:6px;padding:.14em .7em;text-decoration:none;transition:border-color .2s,color .2s;}
-  .post-content .lang-pick a::before{content:"";}
   .post-content .lang-pick a:hover{border-color:var(--accent);color:var(--accent);}
+  .post-content .lang-pick a.active{border-color:var(--accent);color:var(--accent);
+    background:rgba(255,43,62,.08);font-weight:700;}
 
   /* header logo: "blog" -> blog home (subtle dotted underline), "b0tn3t.sh" -> main site.
      PaperMod sets ".logo a{display:flex}", which stacks our parts vertically — keep them inline on one line. */

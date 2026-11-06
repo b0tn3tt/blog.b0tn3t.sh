@@ -9,17 +9,7 @@ images: ["og-awareness-zh.png"]
 isCJKLanguage: true
 ShowToc: true
 TocOpen: false
-build:
-  list: never
-  render: always
-alternates:
-  - { lang: "ru", url: "/posts/security-awareness-quizzes-are-broken/" }
-  - { lang: "en", url: "/posts/security-awareness-quizzes-are-broken-en/" }
-  - { lang: "zh", url: "/posts/security-awareness-quizzes-are-broken-zh/" }
-  - { lang: "x-default", url: "/posts/security-awareness-quizzes-are-broken-en/" }
 ---
-
-[🇷🇺 Русский]({{< ref "/posts/security-awareness-quizzes-are-broken/" >}}) · [🇬🇧 English]({{< ref "/posts/security-awareness-quizzes-are-broken-en/" >}}) · **🇨🇳 中文**
 
 我就直说，不绕弯子：**公司里那种选择题式的安全测验，衡量的不是你们有多安全，而是员工做测验的能力。** 这是两种完全不同的能力，彼此之间没有任何关联。
 
