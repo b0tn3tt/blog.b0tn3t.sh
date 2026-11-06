@@ -45,7 +45,7 @@
   /* terminal prompt tick before list titles */
   .first-entry .entry-header h1::before,
   .first-entry .entry-header h2::before,
-  .post-entry .entry-header h2::before{content:"> ";color:var(--accent);}
+  .post-entry .entry-header h2::before{content:">";color:var(--accent);margin-right:.4em;}
 
   /* red accents */
   .post-content a,.post-single a,.toc a{color:var(--accent);}
@@ -123,4 +123,38 @@
   @keyframes coderain{from{transform:translateY(0);}to{transform:translateY(-50%);}}
   @media (max-width:1300px){.code-rain{display:none;}}
   @media (prefers-reduced-motion:reduce){.code-rain .stream{animation:none;}}
+
+  /* post tags as terminal #chips */
+  .post-tags li a{background:var(--entry);border:1px solid var(--border);
+    color:var(--secondary);border-radius:6px;transition:border-color .2s,color .2s;}
+  .post-tags li a::before{content:"#";color:var(--accent);margin-right:1px;}
+  .post-tags li a:hover{border-color:var(--accent);color:var(--primary);}
+
+  /* inline code tinted red; code blocks get a red left edge */
+  .post-content :not(pre) > code{color:#ff8a93;background:var(--code-bg);
+    border:1px solid var(--border);border-radius:4px;padding:.08em .35em;}
+  .post-content pre{border:1px solid var(--border);border-left:3px solid var(--accent);
+    border-radius:var(--radius);}
+
+  /* thin red-accent scrollbar */
+  html{scrollbar-width:thin;scrollbar-color:var(--tertiary) var(--theme);}
+  ::-webkit-scrollbar{width:10px;height:10px;}
+  ::-webkit-scrollbar-track{background:var(--theme);}
+  ::-webkit-scrollbar-thumb{background:var(--tertiary);border-radius:6px;
+    border:2px solid var(--theme);}
+  ::-webkit-scrollbar-thumb:hover{background:var(--accent);}
+
+  /* footer: red hover on links */
+  .footer a:hover{color:var(--accent);}
+
+  /* subtle scroll-reveal for in-post headings (JS adds .reveal-ready / .in-view;
+     without JS everything stays visible) */
+  body.reveal-ready .post-content h2,
+  body.reveal-ready .post-content h3{opacity:0;transform:translateY(14px);
+    transition:opacity .5s ease, transform .5s ease;}
+  body.reveal-ready .post-content h2.in-view,
+  body.reveal-ready .post-content h3.in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    body.reveal-ready .post-content h2,
+    body.reveal-ready .post-content h3{opacity:1;transform:none;transition:none;}}
 </style>
